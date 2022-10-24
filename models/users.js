@@ -11,9 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Users.belongsTo(models.Roles,{
-        foreignKey: 'role_id'
-      })
+      Users.belongsTo(models.Roles,{foreignKey:"role_id"});
     }
   }
   Users.init({
@@ -26,7 +24,7 @@ module.exports = (sequelize, DataTypes) => {
     about: DataTypes.STRING,
     googleId: DataTypes.STRING,
     registeredVia: DataTypes.STRING,
-    role_id:DataTypes.INTEGER
+    role_id: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Users',

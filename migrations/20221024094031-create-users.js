@@ -27,21 +27,17 @@ module.exports = {
       picture: {
         type: Sequelize.STRING
       },
-      about:{
+      about: {
         type: Sequelize.STRING
       },
       googleId: {
-        type: Sequelize.STRING,
+        type: Sequelize.STRING
       },
       registeredVia: {
-        type: Sequelize.STRING,
+        type: Sequelize.STRING
       },
       role_id: {
-        type:Sequelize.STRING,
-        reference: {
-          model : 'Roles',
-          key: 'id',
-        }
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,

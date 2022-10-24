@@ -28,6 +28,9 @@ const usersController = require("./controllers/usersController");
 
 const rolesController = require("./controllers/rolesController");
 
+const coursesController = require("./controllers/coursesController");
+
+
 // const courseController = require("./controllers/productsController");
 
 // const transactionsController = require("./controllers/transactionsController");
@@ -77,15 +80,15 @@ app.delete("/v1/roles/delete/:id", rolesController.handleDeleteRoles);
 
 
 
-
-
 // ------------------------- Courses System ------------------------- //
 
-// app.get("/v1/courses/search", productsController.handleGetAllProducts);
-// app.post("/v1/courses/create", middleware.authenticate, uploadPicture.fields([{name: "picture"}]), productsController.handleCreateProduct);
-// app.get("/v1/courses/:id", middleware.authenticate, productsController.handleGetProductById);
-// app.put("/v1/courses/update/:id", middleware.authenticate, uploadPicture.fields([{name: "picture"}]), productsController.handleUpdateProductById);
-// app.delete("/v1/courses/delete/:id", middleware.authenticate, productsController.handleDeleteProductById);
+app.get("/v1/courses", coursesController.handleGetAllCourses);
+app.post("/v1/courses/create", middleware.authenticate, uploadPicture.fields([{name: "picture"}]), coursesController.handleCreateCourse);
+app.get("/v1/courses/:id", middleware.authenticate, coursesController.handleGetCourseById);
+app.put("/v1/courses/update/:id", middleware.authenticate, uploadPicture.fields([{name: "picture"}]), coursesController.handleUpdateCourseById);
+app.delete("/v1/courses/delete/:id", middleware.authenticate, coursesController.handleDeleteCourseById);
+app.get("/v1/courses/user_id/:user_id", middleware.authenticate, coursesController.handleGetCourseByUserId);
+app.get("/v1/courses/created_at/:createdAt", middleware.authenticate, coursesController.handleGetCourseByCreatedAt);
 
 // ------------------------- End Courses System ------------------------- //
 
